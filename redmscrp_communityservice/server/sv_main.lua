@@ -1,0 +1,10 @@
+
+RegisterNetEvent("redmscrp_communityservice:addMoney")
+AddEventHandler("redmscrp_communityservice:addMoney", function(payout, xp)
+local _payout = tonumber(payout)
+local _xp = tonumber(xp)
+TriggerEvent('redemrp:getPlayerFromId', source, function(user)
+user.addMoney(tonumber(_payout * 1.2))
+user.addXP(tonumber(_xp))
+end)
+end)
